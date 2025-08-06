@@ -20,56 +20,261 @@
     </ul>
   </div>
 
-  <div class="exercicios">
-    <h2>💡 Exercícios sugeridos:</h2>
-    <div class="exercicio">
-      <h3>1. Variáveis e Dados</h3>
-      <p>Modifique as variáveis no <strong>BLOCO 1</strong> do JavaScript:</p>
-      <ul>
-        <li>Altere seu nome</li>
-        <li>Mude sua idade</li>
-        <li>Adicione novos hobbies</li>
-      </ul>
+  <!-- Sistema de Abas -->
+  <div class="tabs-container">
+    <div class="tabs-header">
+      <button class="tab-btn active" onclick="mostrarAba('inicial')">📖 Exercícios Iniciais</button>
+      <button class="tab-btn" onclick="mostrarAba('avancado')">🚀 Exercícios Avançados</button>
+      <button class="tab-btn" onclick="mostrarAba('desafios')">🏆 Desafios</button>
     </div>
 
-    <div class="exercicio">
-      <h3>2. Funções</h3>
-      <p>Crie novas funções no <strong>BLOCO 2</strong>:</p>
-      <ul>
-        <li>Função para calcular IMC</li>
-        <li>Função para converter temperatura</li>
-        <li>Função para gerar números aleatórios</li>
-      </ul>
+    <!-- Aba de Exercícios Iniciais -->
+    <div id="aba-inicial" class="tab-content active">
+      <h2>💡 Exercícios Iniciais - Comece Aqui!</h2>
+      
+      <div class="exercicio">
+        <h3>1. Variáveis e Dados</h3>
+        <p>Modifique as variáveis no <strong>BLOCO 1</strong> do JavaScript:</p>
+        <ul>
+          <li>Altere seu nome</li>
+          <li>Mude sua idade</li>
+          <li>Adicione novos hobbies</li>
+          <li>Crie uma variável para sua cidade</li>
+          <li>Adicione uma variável booleana para "gosta de programar"</li>
+        </ul>
+        <button onclick="testarVariaveis()" class="btn-exercicio">Testar Variáveis</button>
+      </div>
+
+      <div class="exercicio">
+        <h3>2. Funções Básicas</h3>
+        <p>Crie novas funções no <strong>BLOCO 2</strong>:</p>
+        <ul>
+          <li>Função para calcular IMC (peso / altura²)</li>
+          <li>Função para converter Celsius para Fahrenheit</li>
+          <li>Função para gerar números aleatórios entre 1 e 100</li>
+          <li>Função para verificar se um número é par ou ímpar</li>
+          <li>Função para calcular a área de um círculo</li>
+        </ul>
+        <button onclick="testarFuncoes()" class="btn-exercicio">Testar Funções</button>
+      </div>
+
+      <div class="exercicio">
+        <h3>3. DOM e Eventos</h3>
+        <p>Experimente no <strong>BLOCO 3 e 4</strong>:</p>
+        <ul>
+          <li>Clique nos botões interativos</li>
+          <li>Modifique a função <code>criarElemento()</code></li>
+          <li>Adicione novos tipos de elementos (parágrafos, listas, imagens)</li>
+          <li>Crie uma função para adicionar classes CSS dinamicamente</li>
+          <li>Implemente um sistema de cores para os elementos criados</li>
+        </ul>
+        <button onclick="testarDOM()" class="btn-exercicio">Testar DOM</button>
+      </div>
+
+      <div class="exercicio">
+        <h3>4. Arrays e Métodos</h3>
+        <p>Explore no <strong>BLOCO 6</strong>:</p>
+        <ul>
+          <li>Adicione mais números ao array</li>
+          <li>Teste outros métodos: <code>reduce()</code>, <code>sort()</code>, <code>find()</code></li>
+          <li>Crie arrays com diferentes tipos de dados</li>
+          <li>Implemente uma função para remover duplicatas de um array</li>
+          <li>Crie uma função para encontrar o maior e menor número</li>
+        </ul>
+        <button onclick="testarArrays()" class="btn-exercicio">Testar Arrays</button>
+      </div>
+
+      <div class="exercicio">
+        <h3>5. CSS e Estilos</h3>
+        <p>Personalize no arquivo CSS:</p>
+        <ul>
+          <li>Mude as cores dos botões</li>
+          <li>Adicione novas animações</li>
+          <li>Modifique o layout responsivo</li>
+          <li>Crie novos estilos para os elementos dinâmicos</li>
+          <li>Implemente um tema escuro/claro</li>
+        </ul>
+        <button onclick="testarCSS()" class="btn-exercicio">Testar CSS</button>
+      </div>
+
+      <div class="exercicio">
+        <h3>6. LocalStorage e Persistência</h3>
+        <p>Experimente no <strong>BLOCO 5</strong>:</p>
+        <ul>
+          <li>Crie uma lista de tarefas que persiste</li>
+          <li>Salve preferências do usuário</li>
+          <li>Implemente um sistema de histórico</li>
+          <li>Crie um contador que não zera ao recarregar</li>
+          <li>Salve e carregue configurações personalizadas</li>
+        </ul>
+        <button onclick="testarLocalStorage()" class="btn-exercicio">Testar LocalStorage</button>
+      </div>
     </div>
 
-    <div class="exercicio">
-      <h3>3. DOM e Eventos</h3>
-      <p>Experimente no <strong>BLOCO 3 e 4</strong>:</p>
-      <ul>
-        <li>Clique nos botões interativos</li>
-        <li>Modifique a função <code>criarElemento()</code></li>
-        <li>Adicione novos tipos de elementos</li>
-      </ul>
+    <!-- Aba de Exercícios Avançados -->
+    <div id="aba-avancado" class="tab-content">
+      <h2>🚀 Exercícios Avançados - Desafie-se!</h2>
+      
+      <div class="exercicio">
+        <h3>1. Validação de Formulários</h3>
+        <p>Crie um sistema completo de validação:</p>
+        <ul>
+          <li>Validação de email com regex</li>
+          <li>Validação de CPF</li>
+          <li>Validação de senha (mínimo 8 caracteres, maiúscula, número)</li>
+          <li>Validação de telefone brasileiro</li>
+          <li>Mensagens de erro personalizadas</li>
+        </ul>
+        <button onclick="criarFormularioValidacao()" class="btn-exercicio">Criar Formulário</button>
+      </div>
+
+      <div class="exercicio">
+        <h3>2. Manipulação de Datas</h3>
+        <p>Implemente funções avançadas de data:</p>
+        <ul>
+          <li>Calcular idade exata (anos, meses, dias)</li>
+          <li>Verificar se é fim de semana</li>
+          <li>Calcular dias úteis entre duas datas</li>
+          <li>Formatar data em diferentes idiomas</li>
+          <li>Criar um calendário simples</li>
+        </ul>
+        <button onclick="testarDatas()" class="btn-exercicio">Testar Datas</button>
+      </div>
+
+      <div class="exercicio">
+        <h3>3. Jogos Interativos</h3>
+        <p>Desenvolva jogos simples:</p>
+        <ul>
+          <li>Jogo da velha</li>
+          <li>Jogo da memória</li>
+          <li>Quiz com pontuação</li>
+          <li>Jogo de adivinhação com dicas</li>
+          <li>Simulador de dados</li>
+        </ul>
+        <button onclick="criarJogos()" class="btn-exercicio">Criar Jogos</button>
+      </div>
+
+      <div class="exercicio">
+        <h3>4. Manipulação Avançada de Arrays</h3>
+        <p>Explore funcionalidades complexas:</p>
+        <ul>
+          <li>Ordenação personalizada de objetos</li>
+          <li>Agrupamento de dados por categoria</li>
+          <li>Busca binária em arrays ordenados</li>
+          <li>Implementação de pilha e fila</li>
+          <li>Algoritmos de ordenação (bubble sort, quick sort)</li>
+        </ul>
+        <button onclick="testarArraysAvancado()" class="btn-exercicio">Testar Arrays</button>
+      </div>
+
+      <div class="exercicio">
+        <h3>5. Animações CSS com JavaScript</h3>
+        <p>Crie animações dinâmicas:</p>
+        <ul>
+          <li>Animações baseadas em scroll</li>
+          <li>Efeitos de parallax simples</li>
+          <li>Animações de entrada e saída</li>
+          <li>Transições suaves entre estados</li>
+          <li>Animações baseadas em eventos do mouse</li>
+        </ul>
+        <button onclick="criarAnimacoes()" class="btn-exercicio">Criar Animações</button>
+      </div>
+
+      <div class="exercicio">
+        <h3>6. Sistema de Notas e Estatísticas</h3>
+        <p>Implemente um sistema completo:</p>
+        <ul>
+          <li>Calculadora de média ponderada</li>
+          <li>Geração de gráficos simples</li>
+          <li>Análise estatística básica</li>
+          <li>Sistema de ranking</li>
+          <li>Relatórios em formato JSON</li>
+        </ul>
+        <button onclick="criarSistemaNotas()" class="btn-exercicio">Criar Sistema</button>
+      </div>
     </div>
 
-    <div class="exercicio">
-      <h3>4. Arrays e Métodos</h3>
-      <p>Explore no <strong>BLOCO 6</strong>:</p>
-      <ul>
-        <li>Adicione mais números ao array</li>
-        <li>Teste outros métodos: <code>reduce()</code>, <code>sort()</code></li>
-        <li>Crie arrays com diferentes tipos de dados</li>
-      </ul>
-    </div>
+    <!-- Aba de Desafios -->
+    <div id="aba-desafios" class="tab-content">
+      <h2>🏆 Desafios - Teste seus Conhecimentos!</h2>
+      
+      <div class="exercicio">
+        <h3>1. Cronômetro Completo</h3>
+        <p>Desenvolva um cronômetro profissional:</p>
+        <ul>
+          <li>Controle de play, pause, reset</li>
+          <li>Voltas (laps)</li>
+          <li>Salvamento de tempos</li>
+          <li>Formatação de tempo (HH:MM:SS)</li>
+          <li>Histórico de melhores tempos</li>
+        </ul>
+        <button onclick="criarCronometro()" class="btn-exercicio">Criar Cronômetro</button>
+      </div>
 
-    <div class="exercicio">
-      <h3>5. CSS e Estilos</h3>
-      <p>Personalize no arquivo CSS:</p>
-      <ul>
-        <li>Mude as cores dos botões</li>
-        <li>Adicione novas animações</li>
-        <li>Modifique o layout responsivo</li>
-      </ul>
+      <div class="exercicio">
+        <h3>2. Lista de Tarefas Avançada</h3>
+        <p>Crie um sistema completo de tarefas:</p>
+        <ul>
+          <li>Adicionar, editar, remover tarefas</li>
+          <li>Marcar como concluída</li>
+          <li>Categorias e prioridades</li>
+          <li>Filtros e busca</li>
+          <li>Exportar/importar dados</li>
+        </ul>
+        <button onclick="criarListaTarefas()" class="btn-exercicio">Criar Lista</button>
+      </div>
+
+      <div class="exercicio">
+        <h3>3. Calculadora Científica</h3>
+        <p>Desenvolva uma calculadora completa:</p>
+        <ul>
+          <li>Operações básicas (+, -, *, /)</li>
+          <li>Funções trigonométricas</li>
+          <li>Potenciação e raiz</li>
+          <li>Histórico de cálculos</li>
+          <li>Conversão de unidades</li>
+        </ul>
+        <button onclick="criarCalculadora()" class="btn-exercicio">Criar Calculadora</button>
+      </div>
+
+      <div class="exercicio">
+        <h3>4. Sistema de Cores Dinâmico</h3>
+        <p>Implemente um seletor de cores avançado:</p>
+        <ul>
+          <li>Paleta de cores personalizada</li>
+          <li>Conversão entre RGB, HEX, HSL</li>
+          <li>Geração de cores complementares</li>
+          <li>Salvamento de paletas favoritas</li>
+          <li>Preview em tempo real</li>
+        </ul>
+        <button onclick="criarSeletorCores()" class="btn-exercicio">Criar Seletor</button>
+      </div>
+
+      <div class="exercicio">
+        <h3>5. Editor de Texto Simples</h3>
+        <p>Crie um editor básico:</p>
+        <ul>
+          <li>Formatação de texto (negrito, itálico)</li>
+          <li>Alinhamento de parágrafos</li>
+          <li>Contagem de palavras e caracteres</li>
+          <li>Salvamento automático</li>
+          <li>Modo escuro/claro</li>
+        </ul>
+        <button onclick="criarEditorTexto()" class="btn-exercicio">Criar Editor</button>
+      </div>
+
+      <div class="exercicio">
+        <h3>6. Mini Dashboard</h3>
+        <p>Desenvolva um painel de controle:</p>
+        <ul>
+          <li>Widgets personalizáveis</li>
+          <li>Gráficos simples com dados mock</li>
+          <li>Sistema de notificações</li>
+          <li>Configurações salváveis</li>
+          <li>Layout responsivo e arrastável</li>
+        </ul>
+        <button onclick="criarDashboard()" class="btn-exercicio">Criar Dashboard</button>
+      </div>
     </div>
   </div>
 
@@ -80,6 +285,7 @@
       <li>🔄 O <strong>Hot Reload</strong> atualiza automaticamente</li>
       <li>📖 Consulte a <strong>documentação MDN</strong> para mais informações</li>
       <li>🎯 Experimente, teste e não tenha medo de errar!</li>
+      <li>🔧 Cada exercício tem um botão de teste para verificar seu código</li>
     </ul>
   </div>
 

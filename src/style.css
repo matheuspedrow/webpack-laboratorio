@@ -354,6 +354,93 @@ footer p {
   color: #ffffff;
 }
 
+/* ===== SISTEMA DE ABAS ===== */
+.tabs-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.tabs-header {
+  display: flex;
+  background: rgba(0,0,0,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 15px 20px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-btn:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.tab-btn.active {
+  background: rgba(255,255,255,0.2);
+  border-bottom-color: #007bff;
+  color: #ffffff;
+}
+
+.tab-content {
+  display: none;
+  padding: 30px;
+  animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ===== BOTÕES DE EXERCÍCIOS ===== */
+.btn-exercicio {
+  background: linear-gradient(45deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-exercicio:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+}
+
+.btn-exercicio:active {
+  transform: translateY(0);
+}
+
+/* ===== ANIMAÇÃO PARA ABAS ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ===== MELHORIAS RESPONSIVAS ===== */
 @media (max-width: 768px) {
   .instrucoes, .exercicios, .dicas {
@@ -367,5 +454,262 @@ footer p {
   
   .exercicio {
     padding: 15px;
+  }
+
+  .tabs-header {
+    flex-direction: column;
+  }
+
+  .tab-btn {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .tab-content {
+    padding: 20px;
+  }
+}
+
+/* ===== ESTILOS PARA ELEMENTOS DOS EXERCÍCIOS ===== */
+.formulario-validacao, .jogos-container, .animacoes-container, 
+.sistema-notas, .cronometro-container, .lista-tarefas {
+  background: rgba(255,255,255,0.95);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: slideInUp 0.5s ease;
+  border-left: 5px solid #007bff;
+}
+
+.formulario-validacao h3, .jogos-container h3, .animacoes-container h3,
+.sistema-notas h3, .cronometro-container h3, .lista-tarefas h3 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.formulario-validacao input, .sistema-notas input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.formulario-validacao input:focus, .sistema-notas input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+.formulario-validacao button, .sistema-notas button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px 5px;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-validacao button:hover, .sistema-notas button:hover {
+  background: #0056b3;
+}
+
+/* ===== ESTILOS PARA JOGOS ===== */
+.jogo {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 15px 0;
+  border-left: 4px solid #28a745;
+}
+
+.jogo h4 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.jogo input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.jogo button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.jogo button:hover {
+  background: #218838;
+}
+
+/* ===== ESTILOS PARA ANIMAÇÕES ===== */
+.elemento-animado {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.elemento-animado:hover {
+  transform: scale(1.05);
+}
+
+/* ===== ESTILOS PARA CRONÔMETRO ===== */
+.display-cronometro {
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  font-family: 'Courier New', monospace;
+}
+
+.controles-cronometro {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.controles-cronometro button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.controles-cronometro button:hover {
+  background: #0056b3;
+}
+
+.controles-cronometro button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+/* ===== ESTILOS PARA LISTA DE TAREFAS ===== */
+.adicionar-tarefa {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.adicionar-tarefa input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.adicionar-tarefa button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.adicionar-tarefa button:hover {
+  background: #218838;
+}
+
+#lista-tarefas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#lista-tarefas li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin: 8px 0;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+  transition: all 0.3s ease;
+}
+
+#lista-tarefas li.completa {
+  background: #d4edda;
+  border-left-color: #28a745;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+#lista-tarefas li span {
+  cursor: pointer;
+  flex: 1;
+}
+
+#lista-tarefas li .btn-remover {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+#lista-tarefas li .btn-remover:hover {
+  background: #c82333;
+}
+
+/* ===== ANIMAÇÕES ADICIONAIS ===== */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 } 

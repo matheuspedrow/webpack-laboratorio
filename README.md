@@ -176,8 +176,8 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ## 👨‍💻 Autor
 
 **Seu Nome**
-- GitHub: [@seu-usuario](https://github.com/seu-usuario)
-- Email: seu-email@exemplo.com
+- GitHub: [@seu-usuario](https://github.com/matheuspedrow)
+- Email: matheuspedrow@gmail.com
 
 ## 🙏 Agradecimentos
 
