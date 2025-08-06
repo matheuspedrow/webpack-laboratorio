@@ -34,7 +34,7 @@ window.criarElemento = function() {
     const novoElemento = document.createElement('div');
     novoElemento.className = 'elemento-criado';
     novoElemento.innerHTML = `
-        <h3>Elemento criado por JavaScript!</h3>
+        <h3>Elemento criado!</h3>
         <p>Data: ${new Date().toLocaleDateString()}</p>
         <p>Hora: ${new Date().toLocaleTimeString()}</p>
         <button onclick="removerElemento(this)" class="btn-remover">Remover</button>
@@ -164,40 +164,85 @@ window.mostrarAba = function(aba) {
     event.target.classList.add('active');
 }
 
+// ===== FUNÇÃO DE SCROLL SUAVE =====
+function scrollParaElemento(elemento) {
+    elemento.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start',
+        inline: 'nearest'
+    });
+}
+
 // ===== FUNÇÕES DE TESTE DOS EXERCÍCIOS INICIAIS =====
 window.testarVariaveis = function() {
-    alert(`Testando variáveis:\nNome: ${nome}\nIdade: ${idade}\nHobbies: ${hobbies.join(', ')}`);
-    console.log('Variáveis testadas:', { nome, idade, ehEstudante, hobbies });
+    // Scroll para o BLOCO 1
+    const bloco1 = document.querySelector('.exercicio:nth-child(1)');
+    if (bloco1) scrollParaElemento(bloco1);
+    
+    setTimeout(() => {
+        alert(`Testando variáveis:\nNome: ${nome}\nIdade: ${idade}\nHobbies: ${hobbies.join(', ')}`);
+        console.log('Variáveis testadas:', { nome, idade, ehEstudante, hobbies });
+    }, 500);
 }
 
 window.testarFuncoes = function() {
-    alert(`Testando funções:\nSaudação: ${saudacao()}\nIdade em dias: ${calcularIdadeEmDias()}`);
-    console.log('Funções testadas com sucesso!');
+    // Scroll para o BLOCO 2
+    const bloco2 = document.querySelector('.exercicio:nth-child(2)');
+    if (bloco2) scrollParaElemento(bloco2);
+    
+    setTimeout(() => {
+        alert(`Testando funções:\nSaudação: ${saudacao()}\nIdade em dias: ${calcularIdadeEmDias()}`);
+        console.log('Funções testadas com sucesso!');
+    }, 500);
 }
 
 window.testarDOM = function() {
-    alert('Testando DOM - Verifique se os botões funcionam corretamente!');
-    console.log('DOM testado - botões interativos funcionando');
+    // Scroll para o BLOCO 3
+    const bloco3 = document.querySelector('.exercicio:nth-child(3)');
+    if (bloco3) scrollParaElemento(bloco3);
+    
+    setTimeout(() => {
+        alert('Testando DOM - Verifique se os botões funcionam corretamente!');
+        console.log('DOM testado - botões interativos funcionando');
+    }, 500);
 }
 
 window.testarArrays = function() {
-    alert(`Testando arrays:\nNúmeros: ${numeros.join(', ')}\nFrutas: ${frutas.join(', ')}`);
-    console.log('Arrays testados:', { numeros, frutas });
+    // Scroll para o BLOCO 4
+    const bloco4 = document.querySelector('.exercicio:nth-child(4)');
+    if (bloco4) scrollParaElemento(bloco4);
+    
+    setTimeout(() => {
+        alert(`Testando arrays:\nNúmeros: ${numeros.join(', ')}\nFrutas: ${frutas.join(', ')}`);
+        console.log('Arrays testados:', { numeros, frutas });
+    }, 500);
 }
 
 window.testarCSS = function() {
-    alert('Testando CSS - Verifique se as animações e estilos estão funcionando!');
-    console.log('CSS testado - estilos aplicados corretamente');
+    // Scroll para o BLOCO 5
+    const bloco5 = document.querySelector('.exercicio:nth-child(5)');
+    if (bloco5) scrollParaElemento(bloco5);
+    
+    setTimeout(() => {
+        alert('Testando CSS - Verifique se as animações e estilos estão funcionando!');
+        console.log('CSS testado - estilos aplicados corretamente');
+    }, 500);
 }
 
 window.testarLocalStorage = function() {
-    const dadosSalvos = localStorage.getItem('dadosUsuario');
-    if (dadosSalvos) {
-        alert('LocalStorage funcionando! Dados salvos encontrados.');
-    } else {
-        alert('LocalStorage funcionando! Nenhum dado salvo ainda.');
-    }
-    console.log('LocalStorage testado');
+    // Scroll para o BLOCO 6
+    const bloco6 = document.querySelector('.exercicio:nth-child(6)');
+    if (bloco6) scrollParaElemento(bloco6);
+    
+    setTimeout(() => {
+        const dadosSalvos = localStorage.getItem('dadosUsuario');
+        if (dadosSalvos) {
+            alert('LocalStorage funcionando! Dados salvos encontrados.');
+        } else {
+            alert('LocalStorage funcionando! Nenhum dado salvo ainda.');
+        }
+        console.log('LocalStorage testado');
+    }, 500);
 }
 
 // ===== FUNÇÕES DOS EXERCÍCIOS AVANÇADOS =====
@@ -216,6 +261,9 @@ window.criarFormularioValidacao = function() {
         <button onclick="this.parentElement.remove()" class="btn-remover">Fechar</button>
     `;
     document.body.appendChild(formulario);
+    
+    // Scroll para o formulário criado
+    setTimeout(() => scrollParaElemento(formulario), 100);
 }
 
 window.validarFormulario = function(event) {
@@ -240,12 +288,18 @@ window.validarFormulario = function(event) {
 }
 
 window.testarDatas = function() {
-    const hoje = new Date();
-    const nascimento = new Date('1995-01-01');
-    const idade = hoje.getFullYear() - nascimento.getFullYear();
+    // Scroll para o exercício de datas
+    const exercicioDatas = document.querySelector('#aba-avancado .exercicio:nth-child(2)');
+    if (exercicioDatas) scrollParaElemento(exercicioDatas);
     
-    alert(`Testando datas:\nHoje: ${hoje.toLocaleDateString()}\nIdade calculada: ${idade} anos`);
-    console.log('Datas testadas:', { hoje, nascimento, idade });
+    setTimeout(() => {
+        const hoje = new Date();
+        const nascimento = new Date('1995-01-01');
+        const idade = hoje.getFullYear() - nascimento.getFullYear();
+        
+        alert(`Testando datas:\nHoje: ${hoje.toLocaleDateString()}\nIdade calculada: ${idade} anos`);
+        console.log('Datas testadas:', { hoje, nascimento, idade });
+    }, 500);
 }
 
 window.criarJogos = function() {
@@ -267,6 +321,9 @@ window.criarJogos = function() {
         <button onclick="this.parentElement.remove()" class="btn-remover">Fechar</button>
     `;
     document.body.appendChild(jogos);
+    
+    // Scroll para os jogos criados
+    setTimeout(() => scrollParaElemento(jogos), 100);
 }
 
 window.verificarPalpite = function() {
@@ -289,18 +346,24 @@ window.rolarDados = function() {
 }
 
 window.testarArraysAvancado = function() {
-    const produtos = [
-        { nome: 'Notebook', preco: 2500, categoria: 'eletrônicos' },
-        { nome: 'Mouse', preco: 50, categoria: 'eletrônicos' },
-        { nome: 'Livro', preco: 30, categoria: 'livros' }
-    ];
+    // Scroll para o exercício de arrays avançados
+    const exercicioArrays = document.querySelector('#aba-avancado .exercicio:nth-child(4)');
+    if (exercicioArrays) scrollParaElemento(exercicioArrays);
     
-    const maisCaro = produtos.reduce((max, produto) => 
-        produto.preco > max.preco ? produto : max
-    );
-    
-    alert(`Testando arrays avançados:\nProduto mais caro: ${maisCaro.nome} - R$ ${maisCaro.preco}`);
-    console.log('Arrays avançados testados:', produtos);
+    setTimeout(() => {
+        const produtos = [
+            { nome: 'Notebook', preco: 2500, categoria: 'eletrônicos' },
+            { nome: 'Mouse', preco: 50, categoria: 'eletrônicos' },
+            { nome: 'Livro', preco: 30, categoria: 'livros' }
+        ];
+        
+        const maisCaro = produtos.reduce((max, produto) => 
+            produto.preco > max.preco ? produto : max
+        );
+        
+        alert(`Testando arrays avançados:\nProduto mais caro: ${maisCaro.nome} - R$ ${maisCaro.preco}`);
+        console.log('Arrays avançados testados:', produtos);
+    }, 500);
 }
 
 window.criarAnimacoes = function() {
@@ -315,6 +378,9 @@ window.criarAnimacoes = function() {
         <button onclick="this.parentElement.remove()" class="btn-remover">Fechar</button>
     `;
     document.body.appendChild(animacoes);
+    
+    // Scroll para as animações criadas
+    setTimeout(() => scrollParaElemento(animacoes), 100);
 }
 
 window.adicionarAnimacao = function() {
@@ -341,6 +407,9 @@ window.criarSistemaNotas = function() {
         <button onclick="this.parentElement.remove()" class="btn-remover">Fechar</button>
     `;
     document.body.appendChild(sistema);
+    
+    // Scroll para o sistema criado
+    setTimeout(() => scrollParaElemento(sistema), 100);
 }
 
 window.calcularMedia = function() {
@@ -375,6 +444,9 @@ window.criarCronometro = function() {
         <button onclick="this.parentElement.remove()" class="btn-remover">Fechar</button>
     `;
     document.body.appendChild(cronometro);
+    
+    // Scroll para o cronômetro criado
+    setTimeout(() => scrollParaElemento(cronometro), 100);
 }
 
 let cronometroIntervalo;
@@ -423,6 +495,9 @@ window.criarListaTarefas = function() {
     `;
     document.body.appendChild(lista);
     carregarTarefas();
+    
+    // Scroll para a lista criada
+    setTimeout(() => scrollParaElemento(lista), 100);
 }
 
 window.adicionarTarefa = function() {
