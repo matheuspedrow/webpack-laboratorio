@@ -152,11 +152,10 @@ npm run build
 - ✅ Entender o funcionamento do Webpack
 - ✅ Desenvolver interfaces responsivas
 
-## 💡 Dicas para Professores
+## 💡 Dicas
 
 - Use o **Console do navegador** para demonstrar logs
-- Incentive os alunos a **experimentar** e **errar**
-- Sugira **modificações** nos blocos de código
+- Faça **modificações** nos blocos de código
 - Demonstre o **Hot Reload** em tempo real
 - Use os **exercícios sugeridos** como ponto de partida
 
