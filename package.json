@@ -1,0 +1,20 @@
+{
+  "name": "webpack-html-css-js",
+  "version": "1.0.0",
+  "description": "Projeto inicial com Webpack para HTML, CSS e JavaScript.",
+  "scripts": {
+    "dev": "webpack serve --open",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.101.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}
