@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     botoesContainer.innerHTML = `
         <button onclick="criarElemento()" class="btn btn-primary">Criar Elemento</button>
         <button onclick="mudarCor()" class="btn btn-secondary">Mudar Cor</button>
-        <button onclick="contador()" class="btn btn-success">Contador</button>
+        <button onclick="incrementarContador()" class="btn btn-success">Contador</button>
         <button onclick="salvarDados()" class="btn btn-info">Salvar Dados</button>
     `;
     document.body.appendChild(botoesContainer);
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // ===== BLOCO 5: LOCAL STORAGE =====
 let contador = 0;
 
-function contador() {
+function incrementarContador() {
     contador++;
     document.getElementById('contador-display').textContent = contador;
     localStorage.setItem('contador', contador);
