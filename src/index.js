@@ -30,48 +30,38 @@ console.log(`Você já viveu aproximadamente ${calcularIdadeEmDias()} dias!`);
 
 // ===== BLOCO 3: MANIPULAÇÃO DO DOM =====
 // Adicione elementos ao HTML dinamicamente
-function criarElemento() {
+window.criarElemento = function() {
     const novoElemento = document.createElement('div');
     novoElemento.className = 'elemento-criado';
     novoElemento.innerHTML = `
         <h3>Elemento criado por JavaScript!</h3>
         <p>Data: ${new Date().toLocaleDateString()}</p>
-        <button onclick="removerElemento(this)">Remover</button>
+        <p>Hora: ${new Date().toLocaleTimeString()}</p>
+        <button onclick="removerElemento(this)" class="btn-remover">Remover</button>
     `;
     document.body.appendChild(novoElemento);
+    console.log('Elemento criado com sucesso!');
 }
 
-function removerElemento(botao) {
+window.removerElemento = function(botao) {
     botao.parentElement.remove();
+    console.log('Elemento removido!');
 }
-
-// ===== BLOCO 4: EVENTOS =====
-// Adicione event listeners quando a página carregar
-document.addEventListener('DOMContentLoaded', function() {
-    console.log("Página carregada!");
-    
-    // Cria botões interativos
-    const botoesContainer = document.createElement('div');
-    botoesContainer.className = 'botoes-container';
-    botoesContainer.innerHTML = `
-        <button onclick="criarElemento()" class="btn btn-primary">Criar Elemento</button>
-        <button onclick="mudarCor()" class="btn btn-secondary">Mudar Cor</button>
-        <button onclick="incrementarContador()" class="btn btn-success">Contador</button>
-        <button onclick="salvarDados()" class="btn btn-info">Salvar Dados</button>
-    `;
-    document.body.appendChild(botoesContainer);
-});
 
 // ===== BLOCO 5: LOCAL STORAGE =====
 let contador = 0;
 
-function incrementarContador() {
+window.incrementarContador = function() {
     contador++;
-    document.getElementById('contador-display').textContent = contador;
+    const contadorDisplay = document.getElementById('contador-display');
+    if (contadorDisplay) {
+        contadorDisplay.textContent = contador;
+    }
     localStorage.setItem('contador', contador);
+    console.log('Contador incrementado para:', contador);
 }
 
-function salvarDados() {
+window.salvarDados = function() {
     const dados = {
         nome: nome,
         idade: idade,
@@ -80,6 +70,7 @@ function salvarDados() {
     };
     localStorage.setItem('dadosUsuario', JSON.stringify(dados));
     alert('Dados salvos no localStorage!');
+    console.log('Dados salvos:', dados);
 }
 
 // ===== BLOCO 6: ARRAYS E MÉTODOS =====
@@ -102,31 +93,38 @@ function manipularArrays() {
 }
 
 // ===== BLOCO 7: MUDANÇA DE CORES =====
-let cores = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12', '#9b59b6'];
+let cores = ['#667eea', '#e74c3c', '#2ecc71', '#f39c12', '#9b59b6'];
 let indiceCor = 0;
 
-function mudarCor() {
+window.mudarCor = function() {
     const body = document.body;
     indiceCor = (indiceCor + 1) % cores.length;
-    body.style.backgroundColor = cores[indiceCor];
+    body.style.background = `linear-gradient(135deg, ${cores[indiceCor]} 0%, ${cores[(indiceCor + 1) % cores.length]} 100%)`;
     console.log('Cor alterada para:', cores[indiceCor]);
 }
 
-// ===== INICIALIZAÇÃO =====
-// Carrega dados salvos
-window.addEventListener('load', function() {
-    const dadosSalvos = localStorage.getItem('dadosUsuario');
-    if (dadosSalvos) {
-        const dados = JSON.parse(dadosSalvos);
-        console.log('Dados carregados:', dados);
-    }
+// ===== BLOCO 4: EVENTOS =====
+// Adicione event listeners quando a página carregar
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("Página carregada!");
     
-    // Cria display para contador
+    // Cria display para contador primeiro
     const contadorDisplay = document.createElement('div');
     contadorDisplay.id = 'contador-display';
     contadorDisplay.className = 'contador-display';
     contadorDisplay.textContent = '0';
     document.body.appendChild(contadorDisplay);
+    
+    // Cria botões interativos
+    const botoesContainer = document.createElement('div');
+    botoesContainer.className = 'botoes-container';
+    botoesContainer.innerHTML = `
+        <button onclick="criarElemento()" class="btn btn-primary">Criar Elemento</button>
+        <button onclick="mudarCor()" class="btn btn-secondary">Mudar Cor</button>
+        <button onclick="incrementarContador()" class="btn btn-success">Contador</button>
+        <button onclick="salvarDados()" class="btn btn-info">Salvar Dados</button>
+    `;
+    document.body.appendChild(botoesContainer);
     
     // Carrega contador salvo
     const contadorSalvo = localStorage.getItem('contador');
@@ -137,6 +135,16 @@ window.addEventListener('load', function() {
     
     // Testa manipulação de arrays
     manipularArrays();
+});
+
+// ===== INICIALIZAÇÃO =====
+// Carrega dados salvos
+window.addEventListener('load', function() {
+    const dadosSalvos = localStorage.getItem('dadosUsuario');
+    if (dadosSalvos) {
+        const dados = JSON.parse(dadosSalvos);
+        console.log('Dados carregados:', dados);
+    }
 });
 
 // Mensagem de boas-vindas

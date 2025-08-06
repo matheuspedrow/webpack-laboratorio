@@ -144,6 +144,22 @@ code {
   transform: scale(1.05);
 }
 
+.btn-remover {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.btn-remover:hover {
+  background: #c82333;
+  transform: scale(1.05);
+}
+
 /* ===== ANIMAÇÕES ===== */
 @keyframes fadeInDown {
   from {
