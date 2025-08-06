@@ -1,14 +1,355 @@
+/* ===== ESTILOS GERAIS ===== */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   text-align: center;
-  padding: 50px;
+  padding: 20px;
+  margin: 0;
+  min-height: 100vh;
+  transition: background-color 0.5s ease;
 }
 
+/* ===== CABEÇALHO ===== */
 h1 {
-  color: #3498db;
+  color: #ffffff;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  animation: fadeInDown 1s ease;
 }
 
 p {
   font-size: 18px;
+  color: #f8f9fa;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+code {
+  background-color: rgba(255,255,255,0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+/* ===== CONTAINER DE BOTÕES ===== */
+.botoes-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 30px 0;
+  padding: 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+/* ===== ESTILOS DOS BOTÕES ===== */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  color: white;
+}
+
+.btn-secondary {
+  background: linear-gradient(45deg, #6c757d, #545b62);
+  color: white;
+}
+
+.btn-success {
+  background: linear-gradient(45deg, #28a745, #1e7e34);
+  color: white;
+}
+
+.btn-info {
+  background: linear-gradient(45deg, #17a2b8, #117a8b);
+  color: white;
+}
+
+/* ===== CONTADOR DISPLAY ===== */
+.contador-display {
+  font-size: 3em;
+  font-weight: bold;
+  color: #ffffff;
+  background: rgba(255,255,255,0.2);
+  padding: 20px 40px;
+  border-radius: 15px;
+  margin: 20px auto;
+  display: inline-block;
+  min-width: 120px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  animation: pulse 2s infinite;
+}
+
+/* ===== ELEMENTOS CRIADOS DINAMICAMENTE ===== */
+.elemento-criado {
+  background: rgba(255,255,255,0.95);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: slideInUp 0.5s ease;
+  border-left: 5px solid #007bff;
+}
+
+.elemento-criado h3 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.elemento-criado p {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.elemento-criado button {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.elemento-criado button:hover {
+  background: #c82333;
+  transform: scale(1.05);
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  .botoes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .contador-display {
+    font-size: 2.5em;
+    padding: 15px 30px;
+  }
+}
+
+/* ===== EFEITOS ESPECIAIS ===== */
+.botoes-container:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+/* ===== ESTILOS PARA CONSOLE (se aplicável) ===== */
+.console-output {
+  background: #1e1e1e;
+  color: #00ff00;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: left;
+  overflow-x: auto;
+}
+
+/* ===== ESTILOS PARA FORMULÁRIOS (futuro) ===== */
+.form-group {
+  margin: 15px 0;
+}
+
+.form-control {
+  padding: 10px 15px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 25px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px;
+  backdrop-filter: blur(10px);
+}
+
+.form-control::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.25);
+}
+
+/* ===== ESTILOS PARA SEÇÕES DO HTML ===== */
+.instrucoes, .exercicios, .dicas {
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 30px auto;
+  max-width: 800px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  border-left: 5px solid #28a745;
+}
+
+.instrucoes {
+  border-left-color: #007bff;
+}
+
+.exercicios {
+  border-left-color: #ffc107;
+}
+
+.dicas {
+  border-left-color: #17a2b8;
+}
+
+.instrucoes h2, .exercicios h2, .dicas h2 {
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.instrucoes ul, .exercicios ul, .dicas ul {
+  text-align: left;
+  color: #f8f9fa;
+  line-height: 1.8;
+}
+
+.instrucoes li, .exercicios li, .dicas li {
+  margin-bottom: 8px;
+  padding-left: 10px;
+}
+
+.exercicio {
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  border-left: 3px solid #ffc107;
+}
+
+.exercicio h3 {
+  color: #ffc107;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+.exercicio p {
+  color: #f8f9fa;
+  margin-bottom: 15px;
+}
+
+.exercicio ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.exercicio li {
+  color: #e9ecef;
+  margin-bottom: 5px;
+}
+
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+footer p {
+  margin: 0;
+  font-size: 1.1em;
+  color: #ffffff;
+}
+
+/* ===== MELHORIAS RESPONSIVAS ===== */
+@media (max-width: 768px) {
+  .instrucoes, .exercicios, .dicas {
+    margin: 20px 10px;
+    padding: 20px;
+  }
+  
+  .instrucoes h2, .exercicios h2, .dicas h2 {
+    font-size: 1.5em;
+  }
+  
+  .exercicio {
+    padding: 15px;
+  }
 } 
